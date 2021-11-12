@@ -1,0 +1,89 @@
+body {
+	margin: 0;
+}
+
+#container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+#load-container {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	background-color: black;
+	--percent: 0%;
+	transition: top .2s ease;
+}
+
+#load-container .bar {
+	width: 50vw;
+	height: 10vh;
+	border: 5px solid grey;
+	background: lightgrey;
+	position: relative;
+}
+
+#load-container .bar .inner {
+	height: 100%;
+	background-color: red;
+	width: var(--percent);
+}
+
+#load-container .percent {
+	font-size: 100px;
+	margin-top: 20px;
+	--speed: 1s;
+	animation: var(--speed) linear 1s infinite running dots;
+	--c1: white;
+	--c2: white;
+	--c3: white;
+}
+
+#load-container .percent .dot1 {
+	color: var(--c1);
+}
+
+#load-container .percent .dot2 {
+	color: var(--c2);
+}
+
+#load-container .percent .dot3 {
+	color: var(--c3);
+}
+
+@keyframes dots {
+	0% {
+		--c1: transparent;
+		--c2: transparent;
+		--c3: transparent;
+	}
+
+	25% {
+		--c1: white;
+		--c2: transparent;
+		--c3: transparent;
+	}
+
+	50% {
+		--c1: white;
+		--c2: white;
+		--c3: transparent;
+	}
+
+	75% {
+		--c1: white;
+		--c2: white;
+		--c3: white;
+	}
+}

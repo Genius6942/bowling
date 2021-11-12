@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<script>location.href = '/sus';
+		window.$ = function $ (query) {
+			const a = document.querySelector(query);
+			return a.length != 1 ? a : a[0];
+		}
+	</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>bowling</title>
+	<link rel="stylesheet" href="./style.css">
+	<script type='module' src='./src/main.js'></script>
+</head>
+
+<body>
+	<div id="container">
+		<div id="load-container">
+			<div class="bar">
+				<div class = "inner"></div>
+			</div>
+			<div class = "percent">Starting up<span class = 'dot dot1'>.</span><span class = 'dot dot2'>.</span><span class = 'dot dot3'>.</span></div>
+		</div>
+	</div>
+</body>
+
+</html>

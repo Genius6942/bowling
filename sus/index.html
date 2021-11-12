@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<style>
+			canvas {
+				position: fixed;
+				top: 0;
+				left: 0;
+			}
+			window.addEventListener('error', (e) => {
+				alert(e);
+			});
+		</style>
+		<title>hi</title>
+	</head>
+	<body>
+		<script>
+			const canvas = document.createElement('canvas');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+			document.body.appendChild(canvas);
+			const ctx = canvas.getContext('2d');
+			ctx.fillStyle = 'black';
+			ctx.fillRect(0,0,window.innerWidth, window.innerHeight);
+			
+			const gravity = 1;
+			
+			class Player {
+				constructor () {
+					this.width = 30;
+					this.height = 30;
+					this.y = window.innerHeight / 2;
+					this.veloctiy = 0;
+					this.color = 'red';
+					this.jumpSpeed = -10;
+					
+					window.addEventListener('keydown', (e) => {
+						if (!e.repeat && e.key == ' ') {
+							this.velocity = this.jumpSpeed;
+						}
+					});
+				}
+				
+				update () {
+					this.velocity += gravtiy
+					this.y += this.veloctiy;
+					ctx.fillStyle = this.color;
+					ctx.fillRect(window.innerWidth / 2 - this.width / 2, this.y, this.width, this.height);
+				}
+			}
+			
+			const player = new Player();
+			function update () {
+				ctx.fillStyle = 'black';
+				ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+				player.update();
+				console.log('update');
+				requestAnimationFrame(update);
+			}
+			
+			update();
+		</script>
+	</body>
+</html>
